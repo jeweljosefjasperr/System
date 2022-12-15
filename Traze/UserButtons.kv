@@ -1,0 +1,34 @@
+<UserButtons>:
+    MDFloatLayout:
+        MDLabel:
+            text: "Choose User Type"
+            font_size: "20sp"
+            size_hint : 0.7, 0.04
+            pos_hint : {"x":0.23, "y":0.8}
+
+        MDRaisedButton:
+            size_hint: .3, None
+            text: "Customer"
+            size_hint: 0.5, 0.09
+            pos_hint : {"x":0.25, "y":0.68}
+            md_bg_color: "black"
+            on_release:
+                app.root.current = "CustomerHomepage"
+        
+        MDRaisedButton:
+            size_hint: .3, None
+            text: "Seller"
+            size_hint: 0.5, 0.09
+            pos_hint : {"x":0.25, "y":0.57}
+            md_bg_color: "black"
+            on_release:
+                app.root.current = "SellerHomepage"
+        
+        MDRaisedButton:
+            size_hint: .3, None
+            text: "Delivery Person"
+            size_hint: 0.5, 0.09
+            pos_hint : {"x":0.25, "y":0.46}
+            md_bg_color: "black"
+            on_release:
+                app.root.current = "DeliveryPersonHomepage"

@@ -1,0 +1,14 @@
+
+[2022-12-15 12:28:15] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py39.LoadHandler_OnLoadingStateChange
+  File "d:\Traze\map_ACO_Bakhaw.py", line 551, in OnLoadingStateChange
+    if self.load_start_time:
+AttributeError: 'ClientHandler' object has no attribute 'load_start_time'
+
+
+[2022-12-15 12:28:26] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py39.LoadHandler_OnLoadingStateChange
+  File "d:\Traze\map_ACO_Bakhaw.py", line 551, in OnLoadingStateChange
+    if self.load_start_time:
+AttributeError: 'ClientHandler' object has no attribute 'load_start_time'
+

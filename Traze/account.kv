@@ -1,0 +1,196 @@
+
+<LoginScreen>:
+    name: "login"
+    AnchorLayout:
+        MDFloatLayout
+            MDLabel:
+			    text : "LOGIN PAGE"
+			    size_hint : 0.5, 0.2
+			    pos_hint : {"x":0.35, "top":1}
+
+            MDTextField:
+                id: login_username
+                hint_text: "Username"
+                icon_right: "account"
+                size_hint : 0.6, 0.13
+			    pos_hint : {"x":0.2, "top":0.80}
+                write_tab: False
+                required: True
+                helper_text_mode: "on_error"
+                helper_text: "This field is required"
+            
+            MDTextField:
+                id: login_password
+                hint_text: "Password"
+                icon_right: "key"
+                size_hint : 0.6, 0.13
+			    pos_hint : {"x":0.2, "top":0.65}
+                write_tab: False
+                required: True
+                password: True
+                helper_text_mode: "on_error"
+                helper_text: "This field is required"
+                
+            MDRaisedButton:
+                id: login_btn
+                size_hint: .3, None
+                text: "Login"
+                pos_hint : {"x":0.32, "top":0.45}
+                md_bg_color: "black"
+                on_press:
+                    root.user_login()
+                on_release:
+
+
+            MDLabel:
+                text: "Don't have an account?"
+                font_size : "12sp"
+                size_hint : 0.8, 0.1
+                pos_hint : {"x":0.25, "top":0.40}
+                
+            MDFlatButton:
+                text: "[color=#4682B4]Register[/color]"
+                font_size : "13sp"
+                size_hint : 0.4, 0.05
+                pos_hint : {"x":0.25, "top":0.35}
+                on_release: 
+                    app.root.current = "register"
+                    root.manager.transition.direction = 'right'
+
+<RegisterAccountScreen>:
+    name: "register"
+
+    AnchorLayout:
+
+        FloatLayout:
+            orientation: "vertical"
+
+            MDLabel:
+			    text : "SIGNUP PAGE"
+			    size_hint : 0.5, 0.2
+			    pos_hint : {"x":0.35, "top":1}
+
+            MDTextField:
+                id: fullname
+                hint_text: "Name:"
+                required: True
+                font_size: "13sp"
+                icon_right: "account"
+                pos_hint : {"x":0.20, "top":0.85}
+                size_hint : 0.6, 0.12
+                on_text_validate:
+           
+            MDTextField:
+                id: username
+                required: True
+                icon_right: "account"
+                hint_text:"Username:"
+                font_size: "13sp"
+                pos_hint : {"x":0.20, "top":0.77}
+                size_hint : 0.6, 0.12
+                write_tab: False
+                on_text_validate: 
+
+            MDTextField:
+                id: email
+                required: True
+                hint_text:"Email:"  
+                font_size:"13sp"
+                icon_right: "email"
+                pos_hint : {"x":0.20, "top":0.70}
+                size_hint : 0.6, 0.12
+                write_tab: False
+                on_text_validate: 
+
+            MDTextField:
+                id: phone
+                required: True
+                icon_right: "phone"
+                hint_text: "Phone No:"
+                font_size: "13sp"
+                pos_hint : {"x":0.20, "top":0.63}
+                size_hint : 0.6, 0.12
+                write_tab: False
+                on_text_validate:             
+
+            MDTextField:
+                hint_text: "Address: "
+                id: address
+                required: True
+                icon_right: "home"
+                font_size: "13sp"
+                pos_hint : {"x":0.20, "top":0.56}
+                size_hint : 0.6, 0.11
+                write_tab: False
+                on_text_validate: 
+
+            MDTextField:
+                id: password
+                hint_text:"Password: "
+                required: True
+                icon_right: "lock"
+                font_size: "13sp"
+                pos_hint : {"x":0.20, "top":0.49}
+                size_hint : 0.6, 0.11
+                write_tab: False
+                password: True
+                on_text_validate: 
+         
+            MDTextField:
+                id: confirm_password
+                hint_text: "Confirm Password: " 
+                required: True
+                icon_right: "lock"
+                font_size : "13sp"
+                pos_hint : {"x":0.20, "top":0.42}
+                size_hint : 0.6, 0.11
+                write_tab: False
+                password: True
+                on_text_validate:
+            
+            MDLabel:
+                text: "Role:"
+                size_hint: .8, .1
+                font_size: "15sp"
+                pos_hint : {"x":0.20, "top":0.35}
+
+            Spinner:
+                id: role
+                size_hint: 0.48, 0.06
+                pos_hint: {"x":0.33, "top":0.33}
+                required: True
+                text: 'Select Type of User'
+                values: ['Customer', 'Seller', 'Delivery Person']
+                background_color: 255, 255, 255, 4
+                color: 0, 0, 0, 1
+                sync_height: True
+                on_text:
+            
+            MDRaisedButton:
+                id: register_btn
+                size_hint: .2, None
+                text: "Register"
+                pos_hint : {"x":0.35, "top":0.22}
+                md_bg_color: "black"
+                disabled: not password.text == confirm_password.text
+                on_press: 
+                    root.register_btn_click()
+                on_release:
+                    app.root.current = "login"
+
+            MDLabel:
+                text: "Already have an account?"
+                size_hint: .8, .1
+                font_size: "12sp"
+                pos_hint : {"x":0.25, "top":0.17}
+                
+            MDFlatButton:
+                text: "[color=#4682B4]Log In[/color]"
+                font_size : "13sp"
+                size_hint : 0.3, 0.04
+                pos_hint : {"x":0.34, "top":0.12}
+                color: 0, 0, 1, 1
+                on_release: 
+                    app.root.current = "login"
+                    root.manager.transition.direction = 'left'
+            

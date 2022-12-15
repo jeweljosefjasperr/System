@@ -1,0 +1,383 @@
+<CustomerHomepage>:
+    MDFloatLayout:
+        md_bg_color: 246, 250, 255, 255
+    
+        ProfileCard:
+            size_hint_y: 0.1
+            pos_hint: {"center_y": .95}
+            md_bg_color: 0, 0, 0, 1
+
+            MDLabel:
+                text: "Your Parcels"
+                font_size: "20sp"
+                pos_hint: {"x": 0.05, "y": 0.05}
+                color: rgba (255, 255, 255, 250)
+
+            MDIconButton:
+                icon: "bell"
+                pos_hint:{"x": 0.65, "y": 0.05}
+                user_font_size: "15sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "Notification_Customer"
+                    root.manager.transition.direction = 'left'
+
+            MDIconButton:
+                icon: "account-circle"
+                pos_hint:{"x": 0.8, "y": 0.07}
+                icon_size: "27sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "ProfilePage_Customer"
+                    root.manager.transition.direction = 'left'
+
+        ThreeLineIconListItem:
+            text: "[size=20]Book[/size]"
+            secondary_text: "[color=#FF0000]To Receive[/color]"
+            tertiary_text: "123460"
+            font_size: "8sp"
+            bold: True
+            pos_hint:{"x": 0.0, "y": 0.7}
+            text_color: rgba (0, 0, 0, 1)
+            on_release:
+                app.root.current = "Tracking_Info"
+
+            IconLeftWidget:
+                icon: "truck-outline"
+        
+        #ThreeLineIconListItem:
+            #text: "[size=20]Shoes[/size]"
+            #secondary_text: "[color=#FF0000]To Receive[/color]"
+            #tertiary_text: "721918"
+            #font_size: "8sp"
+            #bold: True
+            #pos_hint:{"x": 0.0, "y": 0.52}
+            #text_color: rgba (0, 0, 0, 1)
+
+            #IconLeftWidget:
+                #icon: "truck-outline"
+        
+        #ThreeLineIconListItem:
+            #text: "[size=20]Mobile Phone[/size]"
+            #secondary_text: "[color=#FF0000]Delivered[/color]"
+            #tertiary_text: "912801"
+            #font_size: "8sp"
+            #bold: True
+            #pos_hint:{"x": 0.0, "y": 0.34}
+            #text_color: rgba (0, 0, 0, 1)
+            #IconLeftWidget:
+                #icon: "truck-outline"
+
+        MDIconButton:
+            icon: "plus-circle-outline"
+            pos_hint:{"x": 0.65, "y": 0.1}
+            icon_size: "50sp"
+            text_color: rgba (0, 0, 0, 1)
+            on_release:
+                app.root.current = 'ContentAdd'
+
+        MDIconButton:
+            icon: "message-text"
+            pos_hint:{"x": 0.12, "y": 0.1}
+            icon_size: "50sp"
+            text_color: rgba (0, 0, 0, 1)
+            on_release:
+                app.root.current = "Message_Customer"
+                root.manager.transition.direction = 'left'
+
+<Tracking_Info>:
+    MDFloatLayout:
+        md_bg_color: 246, 250, 255, 255
+
+        ProfileCard:
+            size_hint_y: 0.1
+            pos_hint: {"center_y": .95}
+            md_bg_color: 0, 0, 0, 1
+        
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint:{"x": 0.03, "y": 0.05}
+                user_font_size: "15sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "CustomerHomepage"
+                    root.manager.transition.direction = 'right'
+
+            MDLabel:
+                text: "Tracking"
+                font_size: "20sp"
+                pos_hint: {"x": 0.2, "y": 0.05}
+                color: rgba (255, 255, 255, 250)
+        
+    MDFloatLayout:
+        MDLabel:
+            id: tracking_no
+            text: "123460"
+            font_size: "25sp"
+            size_hint: 0.5, 0.2
+            pos_hint: {"x": 0.1, "y": 0.72}
+            bold: True
+        
+        MDLabel:
+            text: "Status:"
+            font_size: "15sp"
+            size_hint: 0.5, 0.2
+            pos_hint: {"x": 0.15, "y": 0.6}
+
+        MDLabel:
+            id: delivery_status
+            text: "Out for Delivery"
+            font_size: "15sp"
+            size_hint: 0.5, 0.2
+            pos_hint: {"x": 0.38, "y": 0.6}
+            color: "red"
+
+        MDLabel:
+            text: "Origin:"
+            font_size: "15sp"
+            size_hint: 0.5, 0.2
+            pos_hint: {"x": 0.15, "y": 0.53}
+
+        MDLabel:
+            id: origin
+            text: "Bakhaw"
+            font_size: "15sp"
+            size_hint: 0.5, 0.2
+            pos_hint: {"x": 0.38, "y": 0.53}
+
+        MDLabel:
+            text: "Destination:"
+            font_size: "15sp"
+            size_hint: 0.5, 0.2
+            pos_hint: {"x": 0.15, "y": 0.46}
+
+        MDLabel:
+            id: destination
+            text: "Balabago"
+            font_size: "15sp"
+            size_hint: 0.5, 0.2
+            pos_hint: {"x": 0.45, "y": 0.46}
+
+        MDLabel:
+            text: "Estimated Time of Arrival:"
+            font_size: "14sp"
+            size_hint: 0.7, 0.2
+            pos_hint: {"x": 0.15, "y": 0.39}
+
+        MDLabel:
+            id: ETA
+            text: "15 mins"
+            font_size: "15sp"
+            size_hint: 0.7, 0.2
+            pos_hint: {"x": 0.7, "y": 0.39}
+            color: "red"
+
+        MDLabel:
+            text: "Item:"
+            font_size: "15sp"
+            size_hint: 0.7, 0.2
+            pos_hint: {"x": 0.15, "y": 0.32}
+        
+        MDLabel:
+            id: item
+            text: "Book"
+            font_size: "15sp"
+            size_hint: 0.7, 0.2
+            pos_hint: {"x": 0.38, "y": 0.32}
+
+<ProfilePage_Customer>:
+    MDFloatLayout:
+        md_bg_color: 246, 250, 255, 255
+    
+        ProfileCard:
+            size_hint_y: 0.1
+            pos_hint: {"center_y": .95}
+            md_bg_color: 0, 0, 0, 1
+   
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint:{"center_y": 0.5}
+                user_font_size: "20sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "CustomerHomepage"
+                    root.manager.transition.direction = 'right'
+
+            MDLabel:
+                text: "PROFILE"
+                font_size: "20sp"
+                pos_hint: {"center_x": 0.87, "center_y": 0.5}
+                color: rgba (255, 255, 255, 250)
+        Image:
+            id: ProfilePic
+            source: "user_pic.png"
+            size_hint_x: 0.5
+            pos_hint:{"center_x": 0.50, "center_y": 0.7}
+        MDLabel:
+            text: "Name"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.55}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: fullname
+            text: "Jewel Josef Morales"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.55}
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            text: "User Type"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.50}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: user_type
+            text: "Customer"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.50}
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            text: "Email"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.45}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: email
+            text: "jasper@gmail.com"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.45}
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            text: "Phone No."
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.40}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: pnum
+            text: "+639343536378"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.40}
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            text: "Address"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.35}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: address
+            text: "Balabago"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.35}
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            text: "Password"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.30}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: password
+            text: "*********"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.30}
+            color: rgba(71, 92, 119, 255)
+        MDRaisedButton:
+            text: "Log Out"
+            md_bg_color: 0, 0, 0, 1
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.5, "center_y": 0.15}
+            text_color: rgba(255, 255, 255, 255)
+            on_release:
+                app.root.current = "LoginScreen"
+
+
+<Notification_Customer>:
+    MDFloatLayout:
+        md_bg_color: 246, 250, 255, 255
+    
+        ProfileCard:
+            size_hint_y: 0.1
+            pos_hint: {"center_y": .95}
+            md_bg_color: 0, 0, 0, 1
+   
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint:{"center_y": 0.5}
+                user_font_size: "20sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "CustomerHomepage"
+                    root.manager.transition.direction = 'right'
+
+            MDLabel:
+                text: "NOTIFICATIONS"
+                font_size: "20sp"
+                pos_hint: {"x": 0.15, "center_y": 0.5}
+                color: rgba (255, 255, 255, 250)
+
+        OneLineIconListItem:
+            id: customer1_name
+            text: "[size=15]Rider will pickup your parcel[/size]"
+            pos_hint:{"x": 0, "y": 0.78}
+            text_color: rgba (0, 0, 0, 1)
+            IconLeftWidget:
+                icon: "truck-fast"
+        
+        #OneLineIconListItem:
+            #id: customer1_name
+            #text: "[size=15] KrisnaB has sent your order[/size]"
+            #pos_hint:{"x": 0, "y": 0.66}
+            #text_color: rgba (0, 0, 0, 1)
+            #IconLeftWidget:
+                #icon: "truck-check-outline"
+
+<Message_Customer>:
+    MDFloatLayout:
+        md_bg_color: 246, 250, 255, 255
+    
+        ProfileCard:
+            size_hint_y: 0.1
+            pos_hint: {"center_y": .95}
+            md_bg_color: 0, 0, 0, 1
+   
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint:{"center_y": 0.5}
+                user_font_size: "20sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "CustomerHomepage"
+                    root.manager.transition.direction = 'right'
+
+            MDLabel:
+                text: "Messages"
+                font_size: "20sp"
+                pos_hint: {"x": 0.15, "center_y": 0.5}
+                color: rgba (255, 255, 255, 250)
+
+<ContentAdd>:
+    MDFloatLayout:
+        md_bg_color: 71, 92, 119, 255
+        MDTextField:
+            id: track_trackingid
+            hint_text: "Input Tracking No."
+            size_hint: 0.6, 0.4
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        MDRaisedButton:
+            text: "Track"
+            md_bg_color: "black"
+            size_hint: 0.2, 0.08
+            pos_hint:{"x": 0.32, "y": 0.45}
+            on_release:
+                app.root.current = "CustomerHomepage"

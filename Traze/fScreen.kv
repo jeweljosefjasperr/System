@@ -1,0 +1,15 @@
+<fScreen>:
+    FloatLayout:
+        Image:
+            id: profile_pic
+            source: 'Logo.png'
+            size_hint: 0.7, 0.7
+            pos_hint: {"x": 0.15, "y": 0.3}
+        Button:
+            text : "Continue"
+			size_hint : 0.5, 0.08
+			pos_hint : {"x" : 0.25, "y" : 0.35}
+			on_release:
+            background_color: "black"
+            on_release:
+                app.root.current = "login"

@@ -1,0 +1,493 @@
+<SellerHomepage>:
+    MDFloatLayout:
+        md_bg_color: 246, 250, 255, 255
+    
+        ProfileCard:
+            size_hint_y: 0.1
+            pos_hint: {"center_y": .95}
+            md_bg_color: 0, 0, 0, 1
+
+            MDLabel:
+                text: "List of Customers"
+                font_size: "20sp"
+                pos_hint: {"x": 0.05, "y": 0.05}
+                color: rgba (255, 255, 255, 250)
+
+            MDIconButton:
+                icon: "bell"
+                pos_hint:{"x": 0.65, "y": 0.05}
+                user_font_size: "15sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "Notification_Seller"
+
+            MDIconButton:
+                icon: "account-circle"
+                pos_hint:{"x": 0.8, "y": 0.05}
+                user_font_size: "15sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "ProfilePage_Seller"
+                    root.manager.transition.direction = 'left'
+
+        MDIconButton:
+            icon: "plus-circle-outline"
+            pos_hint:{"x": 0.65, "y": 0.1}
+            icon_size: "50sp"
+            text_color: rgba (0, 0, 0, 1)
+            on_release:
+                app.root.current = "Add_Customer"
+
+        MDIconButton:
+            icon: "message-text"
+            pos_hint:{"x": 0.12, "y": 0.1}
+            icon_size: "50sp"
+            text_color: rgba (0, 0, 0, 1)
+            on_release:
+                app.root.current = "Message_Seller"
+
+        #MDLabel:
+            #id: cust1
+            #text: "please refresh"
+            #text: root.self.cust1
+            #font_size: "8sp"
+            #pos_hint:{"x": 0, "y": 0.8}
+            #color: 0, 0, 0, 1
+
+        OneLineIconListItem:
+            id: root.self.cust1
+            text: "Jewel Josef Morales"
+            font_size: "8sp"
+            pos_hint:{"x": 0, "y": 0.78}
+            text_color: rgba (0, 0, 0, 1)
+            on_release:
+                app.root.current = "Customer_Info"
+                root.manager.transition.direction = 'left'
+
+            IconLeftWidget:
+                icon: "menu"
+
+        #OneLineIconListItem:
+            #id: customer2_name
+            #text: "Jewel Josef Morales"
+            #font_size: "8sp"
+            #pos_hint:{"x": 0.0, "y": 0.66}
+            #text_color: rgba (0, 0, 0, 1)
+
+            #IconLeftWidget:
+                #icon: "menu"
+
+        #OneLineIconListItem:
+            #id: customer3_name
+            #text: "Krisna Batugon"
+            #font_size: "8sp"
+            #pos_hint:{"x": 0.0, "y": 0.54}
+            #text_color: rgba (0, 0, 0, 1)
+
+            #IconLeftWidget:
+                #icon: "menu"
+
+
+
+<Customer_Info>:
+    MDFloatLayout:
+        md_bg_color: 246, 250, 255, 255
+
+        ProfileCard:
+            size_hint_y: 0.1
+            pos_hint: {"center_y": .95}
+            md_bg_color: 0, 0, 0, 1
+        
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint:{"x": 0.03, "y": 0.05}
+                user_font_size: "15sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "SellerHomepage"
+                    root.manager.transition.direction = 'right'
+
+            MDLabel:
+                text: "Customer"
+                font_size: "20sp"
+                pos_hint: {"x": 0.2, "y": 0.05}
+                color: rgba (255, 255, 255, 250)
+
+
+    MDFloatLayout:
+        Image:
+            id: item_pic
+            source: "book.jpg"
+            size_hint: 0.45, 0.45
+            pos_hint: {"x": 0.28, "y": 0.5}
+
+        MDLabel:
+            text: "Item Name: "
+            font_size: "14sp"
+            size_hint: 0.3, 0.2
+            pos_hint: {"x": 0.12, "y": 0.43}
+        
+        MDLabel:
+            id: cname1
+            text: "Book"
+            font_size: "14sp"
+            size_hint: 0.5, 0.2
+            pos_hint: {"x": 0.38, "y": 0.43}
+        
+        MDLabel:
+            text: "Name: "
+            font_size: "14sp"
+            size_hint: 0.2, 0.2
+            pos_hint: {"x": 0.12, "y": 0.37}
+        
+        MDLabel:
+            id: cname1
+            text: "Jewel Josef Morales"
+            font_size: "14sp"
+            size_hint: 0.5, 0.2
+            pos_hint: {"x": 0.38, "y": 0.37}
+
+        MDLabel:
+            text: "Address:"
+            font_size: "14sp"
+            size_hint: 0.2, 0.2
+            pos_hint: {"x": 0.12, "y": 0.31}
+        
+        MDLabel:
+            id: cadd1
+            text: "Balabago"
+            font_size: "14sp"
+            size_hint: 0.6, 0.2
+            pos_hint: {"x": 0.38, "y": 0.31}
+
+        MDLabel:
+            text: "Phone No.:"
+            font_size: "14sp"
+            size_hint: 0.4, 0.2
+            pos_hint: {"x": 0.12, "y": 0.25}
+        
+        MDLabel:
+            id: cnum1
+            text: "09343536378"
+            font_size: "14sp"
+            size_hint: 0.6, 0.2
+            pos_hint: {"x": 0.38, "y": 0.25}
+
+        MDLabel:
+            text: "Tracking #:"
+            font_size: "14sp"
+            size_hint: 0.4, 0.2
+            pos_hint: {"x": 0.12, "y": 0.19}
+        
+        MDLabel:
+            id: tracking_id
+            text: "123460"
+            font_size: "14sp"
+            size_hint: 0.6, 0.2
+            pos_hint: {"x": 0.38, "y": 0.19}
+
+        MDLabel:
+            text: "Date of Order:"
+            font_size: "14sp"
+            size_hint: 0.4, 0.2
+            pos_hint: {"x": 0.12, "y": 0.13}
+        
+        MDLabel:
+            id: date_order
+            text: "2022-11-11"
+            font_size: "14sp"
+            size_hint: 0.6, 0.2
+            pos_hint: {"x": 0.42, "y": 0.13}
+
+        MDLabel:
+            text: "Parcel Status:"
+            font_size: "14sp"
+            size_hint: 0.5, 0.2
+            pos_hint: {"x": 0.12, "y": 0.07}
+        
+        MDTextButton:
+            id: cstatus1
+            text: "Ready for Pick Up"
+            font_size: "14sp"
+            size_hint: 0.6, 0.2
+            pos_hint: {"x": 0.43, "y": 0.07}
+            color: "blue"
+
+<ProfilePage_Seller>:
+    MDFloatLayout:
+        md_bg_color: 246, 250, 255, 255
+    
+        ProfileCard:
+            size_hint_y: 0.1
+            pos_hint: {"center_y": .95}
+            md_bg_color: 0, 0, 0, 1
+   
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint:{"center_y": 0.5}
+                user_font_size: "20sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "SellerHomepage"
+                    root.manager.transition.direction = 'right'
+
+            MDLabel:
+                text: "PROFILE"
+                font_size: "20sp"
+                pos_hint: {"x": 0.15, "center_y": 0.5}
+                color: rgba (255, 255, 255, 250)
+
+        Image:
+            id: ProfilePic
+            source: "user_pic.png"
+            size_hint_x: 0.5
+            pos_hint:{"center_x": 0.50, "center_y": 0.7}
+        MDLabel:
+            text: "Name"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.55}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: fullname
+            text: "Maria Arlyn Fuerte"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.55}
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            text: "User Type"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.50}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: user_type
+            text: "Seller"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.50}
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            text: "Email"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.45}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: email
+            text: "arlyn@gmail.com"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.45}
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            text: "Phone No."
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.40}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: pnum
+            text: "+639123456789"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.40}
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            text: "Address"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.35}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: address
+            text: "Bakhaw"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.35}
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            text: "Password"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.20, "center_y": 0.30}
+            halign: "center"
+            color: rgba(71, 92, 119, 255)
+        MDLabel:
+            id: password
+            text: "***********"
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.83, "center_y": 0.30}
+            color: rgba(71, 92, 119, 255)
+
+        MDRaisedButton:
+            text: "Log Out"
+            md_bg_color: 0, 0, 0, 1
+            font_size: "12sp"
+            pos_hint: {"center_x": 0.5, "center_y": 0.15}
+            text_color: rgba(255, 255, 255, 255)
+            on_release:
+                app.root.current = "LoginScreen"
+
+<Notification_Seller>:
+    MDFloatLayout:
+        md_bg_color: 246, 250, 255, 255
+    
+        ProfileCard:
+            size_hint_y: 0.1
+            pos_hint: {"center_y": .95}
+            md_bg_color: 0, 0, 0, 1
+   
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint:{"center_y": 0.5}
+                user_font_size: "20sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "SellerHomepage"
+                    root.manager.transition.direction = 'right'
+
+            MDLabel:
+                text: "NOTIFICATIONS"
+                font_size: "20sp"
+                pos_hint: {"x": 0.15, "center_y": 0.5}
+                color: rgba (255, 255, 255, 250)
+
+        OneLineIconListItem:
+            id: customer1_name
+            text: "[size=15]Rider will pick up the parcel[/size]"
+            pos_hint:{"x": 0, "y": 0.78}
+            text_color: rgba (0, 0, 0, 1)
+
+            IconLeftWidget:
+                icon: "truck-fast"
+        
+        #OneLineIconListItem:
+            #id: customer1_name
+            #text: "[size=15]Maria08 received her order[/size]"
+            #pos_hint:{"x": 0, "y": 0.66}
+            #text_color: rgba (0, 0, 0, 1)
+            #IconLeftWidget:
+                #icon: "truck-check-outline"
+
+<Message_Seller>:
+    MDFloatLayout:
+        md_bg_color: 246, 250, 255, 255
+    
+        ProfileCard:
+            size_hint_y: 0.1
+            pos_hint: {"center_y": .95}
+            md_bg_color: 0, 0, 0, 1
+   
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint:{"center_y": 0.5}
+                user_font_size: "20sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "SellerHomepage"
+                    root.manager.transition.direction = 'right'
+
+            MDLabel:
+                text: "Messages"
+                font_size: "20sp"
+                pos_hint: {"x": 0.15, "center_y": 0.5}
+                color: rgba (255, 255, 255, 250)
+
+
+<Add_Customer>:
+    MDFloatLayout:
+        md_bg_color: 246, 250, 255, 255
+    
+        ProfileCard:
+            size_hint_y: 0.1
+            pos_hint: {"center_y": .95}
+            md_bg_color: 0, 0, 0, 1
+   
+            MDIconButton:
+                icon: "arrow-left"
+                pos_hint:{"center_y": 0.5}
+                user_font_size: "20sp"
+                theme_text_color: "Custom"
+                text_color: rgba (255, 255, 255, 250)
+                on_release:
+                    app.root.current = "SellerHomepage"
+                    root.manager.transition.direction = 'right'
+
+            MDLabel:
+                text: "ADD CUSTOMER"
+                font_size: "20sp"
+                pos_hint: {"x": 0.15, "center_y": 0.5}
+                color: rgba (255, 255, 255, 250)
+
+        MDTextField:
+            id: cust_name
+            hint_text: "Name of Customer"
+            required: True
+            size_hint: 0.7, 0.12
+            pos_hint: {"x": 0.15, "y": 0.75}
+
+        MDTextField:
+            id: cust_phone
+            hint_text: "Customer Phone No."
+            required: True
+            size_hint: 0.7, 0.12
+            pos_hint: {"x": 0.15, "y": 0.67}
+
+        MDTextField:
+            id: item_name
+            hint_text: "Item Name"
+            required: True
+            size_hint: 0.7, 0.12
+            pos_hint: {"x": 0.15, "y": 0.59}
+    
+        MDTextField:
+            id: cust_addr
+            hint_text: "Customer Address"
+            required: True
+            size_hint: 0.7, 0.12
+            pos_hint: {"x": 0.15, "y": 0.51}
+
+        MDTextField:
+            id: pu_addr
+            hint_text: "Pick-up Address"
+            required: True
+            size_hint: 0.7, 0.12
+            pos_hint: {"x": 0.15, "y": 0.43}
+    
+        MDTextField:
+            id:date_order
+            hint_text: "Date of Order"
+            required: True
+            size_hint: 0.7, 0.12
+            pos_hint: {"x": 0.15, "y": 0.35}
+
+        MDLabel:
+            text: "Category:"
+            size_hint: .8, .1
+            font_size: "17sp"
+            pos_hint : {"x":0.15, "y":0.28}
+
+        Spinner:
+            id: category
+            size_hint: 0.44, 0.06
+            pos_hint: {"x":0.42, "y":0.30}
+            required: True
+            text: 'Category'
+            values: ['Perishable', 'Non-Perishable']
+            background_color: 255, 255, 255, 4
+            color: 0, 0, 0, 1
+            sync_height: True
+            on_text:
+
+        MDRaisedButton:
+            text: "Add"
+            md_bg_color: "black"
+            size_hint: 0.3, 0.08
+            pos_hint:{"center_x": 0.5, "y": 0.15}
+            on_press:
+                root.AddCustomer_btn()
+            on_release:
+                app.root.current = 'SellerHomepage'
+            
